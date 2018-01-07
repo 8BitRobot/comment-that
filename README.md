@@ -21,6 +21,10 @@ Alternatively, you can download the source code, `cd` into the download director
 * keyboard shortcut <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
 * uncommenting commented text (now, shortcut will toggle comment)
 
+### In progress:
+
+* hitting keyboard shortcut while not selecting any text will generate comment tags and place cursor in between the two
+
 ### Contributing
 
 Anybody and everybody is welcome to contribute, either by submitting issues or by modifying or adding to the code. Feature suggestions are even more welcome, because I'm running short on ideas.
