@@ -1,0 +1,16 @@
+{
+  "name": "comment-that",
+  "main": "./lib/comment-that",
+  "version": "0.0.0",
+  "description": "Comment out any code with a single keyboard shortcut! Batteries not included.",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "comment-that:comment"
+  },
+  "repository": "https://github.com/8BitRobot/comment-that",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {}
+}

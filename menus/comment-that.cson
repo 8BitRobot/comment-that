@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle Comment'
+      'command': 'comment-that:comment'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Comment that'
+      'submenu': [
+        {
+          'label': 'Toggle Comment'
+          'command': 'comment-that:comment'
+        }
+      ]
+    ]
+  }
+]
