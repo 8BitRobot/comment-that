@@ -3,14 +3,14 @@ module.exports =
     atom.commands.add 'atom-workspace', 'comment-that:comment': => @comment()
   comment: ->
     if editor = atom.workspace.getActiveTextEditor()
-      editor.getSelections().map((item) -> codeCommentToggler(editor, item))
-codeCommentToggler = (editor, selection) ->
+      editor.getSelections().map((item) -> main(editor, item))
+main = (editor, selection) ->
   text = selection.getText()
   commentFormats = commentFormatGenerator(editor.getGrammar().scopeName)
   openingComment = commentFormats[0]
   closingComment = commentFormats[1]
   if selection.isEmpty()
-    cursorRow = editor.getCursorBufferPosition().toArray()[0] + 1
+    cursorRow = editor.getCursorBufferPosition().row + 1
     cursorCol = 0
     newText = [openingComment, "\n\n", closingComment].join('')
   else
