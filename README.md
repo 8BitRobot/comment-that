@@ -16,14 +16,15 @@ Alternatively, you can download the source code, `cd` into the download director
 ### Features so far:
 
 * commenting (no way)
-* places cursor at end of comment (or uncommented text) automatically
+* place cursor at end of comment (or uncommented text) automatically
 * support for every scope except for the ones listed in `unsupported.txt`.
 * keyboard shortcut <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>
 * uncommenting commented text (now, shortcut will toggle comment)
+* hitting keyboard shortcut while not selecting any text will generate comment tags and place cursor in between the two
 
 ### In progress:
 
-* hitting keyboard shortcut while not selecting any text will generate comment tags and place cursor in between the two
+* issue with more than one cursor when no text selected
 
 ### Contributing
 

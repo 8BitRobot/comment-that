@@ -4,29 +4,33 @@ module.exports =
   comment: ->
     if editor = atom.workspace.getActiveTextEditor()
       editor.getSelections().map((item) -> codeCommentToggler(editor, item))
-
 codeCommentToggler = (editor, selection) ->
   text = selection.getText()
   commentFormats = commentFormatGenerator(editor.getGrammar().scopeName)
   openingComment = commentFormats[0]
   closingComment = commentFormats[1]
-  separatedtext = text.split "\n"
-  last = separatedtext.length - 1 #index of last element in separatedtext
-  oCminusspace = separatedtext[0].replace /^\s+|\s+$/g, ""
-  cCminusspace = separatedtext[last].replace /^\s+|\s+$/g, ""
-  if openingComment == oCminusspace and closingComment == cCminusspace
-    notcommentText = separatedtext.slice(1, (separatedtext.length - 1))
-    notcommentJoined = notcommentText.join("")
-    newText = notcommentJoined.replace(/(\n|\r)$/g, "")
-    cursorRow = selection.getBufferRange().end.row - 2
-    cursorCol = notcommentText[notcommentText.length - 1].length
-  else 
-    if openingComment == "unsup"
-      atom.notifications.addError("This scope is not supported. If you know the format for comments in this scope, please consider creating an issue on the GitHub repository with the proper commenting format.")
-      return 1
-    newText = [openingComment, '\n', text, '\n', closingComment].join('')
-    cursorRow = selection.getBufferRange().end.row + 2
-    cursorCol = closingComment.length
+  if selection.isEmpty()
+    cursorRow = editor.getCursorBufferPosition().toArray()[0] + 1
+    cursorCol = 0
+    newText = [openingComment, "\n\n", closingComment].join('')
+  else
+    separatedtext = text.split "\n"
+    last = separatedtext.length - 1 #index of last element in separatedtext
+    oCminusspace = separatedtext[0].replace /^\s+|\s+$/g, ""
+    cCminusspace = separatedtext[last].replace /^\s+|\s+$/g, ""
+    if openingComment == oCminusspace and closingComment == cCminusspace
+      notcommentText = separatedtext.slice(1, (separatedtext.length - 1))
+      notcommentJoined = notcommentText.join("")
+      newText = notcommentJoined.replace(/(\n|\r)$/g, "")
+      cursorRow = selection.getBufferRange().end.row - 2
+      cursorCol = notcommentText[notcommentText.length - 1].length
+    else
+      if openingComment == "unsup"
+        atom.notifications.addError("This scope is not supported. If you know the format for comments in this scope, please consider creating an issue on the GitHub repository with the proper commenting format.")
+        return 1
+      newText = [openingComment, '\n', text, '\n', closingComment].join('')
+      cursorRow = selection.getBufferRange().end.row + 2
+      cursorCol = closingComment.length
   point = [cursorRow, cursorCol]
   selection.insertText(newText)
   selection.cursor.setBufferPosition(point)
