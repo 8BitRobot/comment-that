@@ -26,14 +26,10 @@ For best results, highlight all whitespace before the text you want to comment. 
 * uncommenting commented text (now, shortcut will toggle comment)
 * hitting keyboard shortcut while not selecting any text will generate comment tags and place cursor in between the two
 
-### In progress:
-
-* issue with more than one cursor when no text selected
-
 ### Contributing
 
 Anybody and everybody is welcome to contribute, either by submitting issues or by modifying or adding to the code. Feature suggestions are even more welcome, because I'm running short on ideas.
 
 ### License:
 
-MIT
+MIT, see the LICENSE.md for more details
