@@ -1,6 +1,6 @@
 # Comment That!
 
-## This package is currently unsupported.
+## This package is currently deprecated.
 
 [Watch it in action here!](https://youtu.be/gTbSzw7v7Is)
 
