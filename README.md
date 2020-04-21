@@ -1,5 +1,7 @@
 # Comment That!
 
+## This package is currently unsupported.
+
 [Watch it in action here!](https://youtu.be/gTbSzw7v7Is)
 
 A package for [Atom](https://atom.io/) that comments out selected text.
@@ -12,10 +14,6 @@ Feedback would be appreciated, as this is my first ever Atom package.
 
 Open a terminal or console or shell, and type in `apm install comment-that`  
 Alternatively, you can download the source code, `cd` into the download directory using a terminal, and run `apm link`. This will work because this package (currently) has no dependencies.
-
-### Usage:
-
-For best results, highlight all whitespace before the text you want to comment. To achieve this, you can either select the whitespace manually or click on the number of the row (essentially, selecting the entire line). Then, select only up to the end of the target text, making sure NOT to highlight any whitespace (this will cause you to also highlight the newline at the end and will result in an extra line in the comment). If you don't care, do whatever, but if you are really nitpicky on formatting, this is what you should do. I am currently working on fixing this so the formatting stays intact, but for now, do this.
 
 ### Features so far:
 
